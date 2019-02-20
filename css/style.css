@@ -13,6 +13,10 @@ body {
     height: 200px;
 }
 
+.header-content {
+    margin-top: 50px;
+}
+
 .container {
     background-color: #00d0ff9c;
     width: 85%;
