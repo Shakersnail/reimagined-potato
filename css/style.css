@@ -93,7 +93,5 @@ body {
 }
 
 .selected-btns {
-    width: 70%;
-    display: inline-flex;
-    text-align: right;
+    margin-left: 10px;
 }
