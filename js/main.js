@@ -124,4 +124,27 @@ let interval = setInterval(() => {
     document.getElementById('money-counter').innerHTML = money.data.total;
     document.getElementById('fish-power').innerHTML = fish.data.power;
 
+    // Progressbar
+    let current_progress = Math.round(fish.data.total / container.data.capacity * 100);
+    $("#dynamic")
+        .css("width", current_progress + "%")
+        .attr("aria-valuenow", current_progress)
+        .text("Container " + current_progress + "%");
+    if (current_progress >= 50) {
+        $('#dynamic').removeClass("progress-bar progress-bar-striped progress-bar-animated");
+        $('#dynamic').addClass("progress-bar bg-warning progress-bar-striped progress-bar-animated");
+    } else {
+        $('#dynamic').removeClass("progress-bar bg-warning progress-bar-striped progress-bar-animated");
+        $('#dynamic').removeClass("progress-bar bg-danger progress-bar-striped progress-bar-animated");
+        $('#dynamic').addClass("progress-bar progress-bar-striped progress-bar-animated");
+    }
+    if (current_progress >= 90) {
+        $('#dynamic').removeClass("progress-bar bg-warning progress-bar-striped progress-bar-animated");
+        $('#dynamic').removeClass("progress-bar progress-bar-striped progress-bar-animated");
+        $('#dynamic').addClass("progress-bar bg-danger progress-bar-striped progress-bar-animated");
+    } else {
+        $('#dynamic').removeClass("progress-bar bg-danger progress-bar-striped progress-bar-animated");
+        $('#dynamic').addClass("progress-bar progress-bar-striped progress-bar-animated");
+}
+
 }, 1);
