@@ -133,7 +133,7 @@ let interval = setInterval(() => {
     document.getElementById('fish-max').innerHTML = container.data.capacity;
     document.getElementById('money-counter').innerHTML = numberformat.formatShort(money.data.total);
     document.getElementById('fish-power').innerHTML = fish.data.power;
-    document.getElementById('buy-selected').innerHTML = selected;
+    document.getElementsByClassName('buy-selected').innerHTML = selected;
     document.getElementById('u1-name').innerHTML = container.data.name;
     document.getElementById('u1-level').innerHTML = container.data.level;
     document.getElementById('u1-price').innerHTML = numberformat.formatShort(container.data.cost * Math.pow(container.data.costmultiplier, selected-1));
