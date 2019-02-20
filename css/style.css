@@ -7,7 +7,7 @@ body {
 .header {
     text-align: center;
     background-image: url("../img.png");
-    background-blend-mode: color-burn;
+    background-blend-mode: difference;
     background-size: 100% 100%;
     color: #000000;
     text-shadow: 2px 2px #FFFFFF;
