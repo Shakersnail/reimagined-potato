@@ -19,6 +19,7 @@ body {
 .counters {
     list-style: none;
     margin: 0;
+    padding: 10px 10px 10px 10px;
 }
 
 .counters li {
