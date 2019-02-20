@@ -1,4 +1,4 @@
-document.getElementById("btn").addEventListener("click", Hello);
+document.getElementById("btn").addEventListener("click", Hello());
 function Hello()
 {
     console.log("Hello!");
