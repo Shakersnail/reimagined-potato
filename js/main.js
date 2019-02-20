@@ -13,7 +13,7 @@ let money = {
             fish.total += amount;
         },
         sell: () => {
-            money.total = fish.total * fish.price;
+            money.total += fish.total * fish.price;
             fish.total = 0;
         }
     },
