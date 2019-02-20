@@ -1,37 +1,43 @@
 let money = {
-        name: "money",
-        total: 0,
+        data: {
+            name: "money",
+            total: 0,
+        },
         add: (amount) => {
             money.total += amount;
         }
     },
     fish = {
-        name: "fish",
-        total: 0,
-        price: 5,
+        data: {
+            name: "fish",
+            total: 0,
+            price: 5,
+        },
         add: (amount) => {
-            fish.total += amount;
+            fish.data.total += amount;
         },
         sell: () => {
-            money.total += fish.total * fish.price;
-            fish.total = 0;
+            money.data.total += fish.data.total * fish.data.price;
+            fish.data.total = 0;
         }
     },
     container = {
-        name: "container",
-        total: 0,
-        capacity: 10,
+        data: {
+            name: "container",
+            total: 0,
+            capacity: 10,
+        },
         upgrade: (amount) => {
-            container.capacity += amount;
+            container.data.capacity += amount;
         }
     }
 
 // Sets up savegame stuff
 function saveG() {
     let save = {
-        money: money,
-        fish: fish,
-        container: container,
+        money: money.data,
+        fish: fish.data,
+        container: container.data,
     }
     localStorage.setItem("save", JSON.stringify(save));
 }
@@ -39,33 +45,45 @@ function saveG() {
 function loadG() {
     let savegame;
     savegame = JSON.parse(localStorage.getItem("save"));
-    if (typeof savegame.money !== "undefined") money = savegame.money;
-    if (typeof savegame.fish !== "undefined") fish = savegame.fish;
-    if (typeof savegame.container !== "undefined") container = savegame.container;
+    if (typeof savegame.money !== "undefined") money.data = savegame.money;
+    if (typeof savegame.fish !== "undefined") fish.data = savegame.fish;
+    if (typeof savegame.container !== "undefined") container.data = savegame.container;
 }
 // Resets the values of the game
 function resetG() {
     localStorage.removeItem("save")
+
     money = {
-        name: "money",
-        total: 0,
+        data: {
+            name: "money",
+            total: 0,
+        },
         add: (amount) => {
             money.total += amount;
         }
     },
     fish = {
-        name: "fish",
-        total: 0,
+        data: {
+            name: "fish",
+            total: 0,
+            price: 5,
+        },
         add: (amount) => {
-            fish.total += amount;
+            fish.data.total += amount;
+        },
+        sell: () => {
+            money.data.total += fish.data.total * fish.data.price;
+            fish.data.total = 0;
         }
     },
     container = {
-        name: "container",
-        total: 0,
-        capacity: 10,
+        data: {
+            name: "container",
+            total: 0,
+            capacity: 10,
+        },
         upgrade: (amount) => {
-            container.capacity += amount;
+            container.data.capacity += amount;
         }
     }
 }
@@ -96,12 +114,12 @@ function update() {
 
 let interval = setInterval(() => {
 
-    if(fish.total >= container.capacity){
-        fish.total = container.capacity;
+    if(fish.data.total >= container.data.capacity){
+        fish.data.total = container.data.capacity;
     }
     // Updates the HTML
-    document.getElementById('fish-counter').innerHTML = fish.total;
-    document.getElementById('fish-max').innerHTML = container.capacity;
-    document.getElementById('money-counter').innerHTML = money.total;
+    document.getElementById('fish-counter').innerHTML = fish.data.total;
+    document.getElementById('fish-max').innerHTML = container.data.capacity;
+    document.getElementById('money-counter').innerHTML = money.data.total;
 
 }, 1);
