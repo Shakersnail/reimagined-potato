@@ -38,3 +38,9 @@ body {
     border-radius: 5px;
     background-color: #4495ed;
 }
+.progress {
+    background-color: rgba(43, 43, 43, 0.055);
+    border: 1px solid rgba(27, 27, 27, 0.267);
+    border-radius: 5px;
+    height: 25px;
+}
