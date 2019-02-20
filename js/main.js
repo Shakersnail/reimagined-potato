@@ -1,5 +1,4 @@
 document.getElementById("btn").addEventListener("click", Hello());
-function Hello()
-{
+function Hello(){
     console.log("Hello!");
 }
