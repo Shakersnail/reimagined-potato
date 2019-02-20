@@ -130,7 +130,7 @@ let interval = setInterval(() => {
     // Updates the HTML
     document.getElementById('fish-counter').innerHTML = fish.data.total;
     document.getElementById('fish-max').innerHTML = container.data.capacity;
-    document.getElementById('money-counter').innerHTML = formatShort(money.data.total);
+    document.getElementById('money-counter').innerHTML = numberformat.formatShort(money.data.total);
     document.getElementById('fish-power').innerHTML = fish.data.power;
 
     // Progressbar
