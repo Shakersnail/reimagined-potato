@@ -24,6 +24,26 @@
                 hand
                 it over to your dumb ass.</b></p>
     </div>
+    <div class="content container">
+        <ul class="counters">
+            <li>
+                <b>Fish: </b><span id="fish-counter"></span>/<span id="fish-max"></span>
+            </li>
+            <li>
+                <b>Money: </b><span id="money-counter"></span>€
+            </li>
+        </ul>
+        <div class="progress">
+            <div id="dynamic" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                <span class="sr-only"><span id="current-progress"></span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="fish-btn" type="button" class="btn btn-success">Fish +<span id="fish-power"></span></button>
+            <button id="sell-btn" type="button" class="btn btn-warning">Sell All Fish</button>
+        </div>
+    </div>
     <!-- Tabs -->
     <div class="content container">
         <ul class="nav nav-tabs" role="tablist">
@@ -41,24 +61,6 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div id="home" class="tab-pane active"><br>
-                <ul class="counters">
-                    <li>
-                        <b>Fish: </b><span id="fish-counter"></span>/<span id="fish-max"></span>
-                    </li>
-                    <li>
-                        <b>Money: </b><span id="money-counter"></span>€
-                    </li>
-                </ul>
-                <div class="progress">
-                    <div id="dynamic" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-                        <span class="sr-only"><span id="current-progress"></span>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button id="fish-btn" type="button" class="btn btn-success">Fish +<span id="fish-power"></span></button>
-                    <button id="sell-btn" type="button" class="btn btn-warning">Sell All Fish</button>
-                </div>
                 <div class="buttons">
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary" onclick="speed(100)">Speed x10</span></button>
