@@ -1,3 +1,2 @@
-$("button").click(function(){
-    console.log("Fwwwaa!");
-});
+let btn = document.getElementById("btn");
+btn.onclick(() => console.log("Hello!"));
