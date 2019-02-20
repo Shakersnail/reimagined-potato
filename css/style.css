@@ -1,7 +1,7 @@
 body {
     background-color: darkslategray;
     margin: 0;
-    color: #333333;
+    color: #222222;
 }
 
 .header {
@@ -66,9 +66,11 @@ body {
 .nav-tabs .nav-link.active {
     background-color: #00d0ffa9;
     border-color: #333333;
+    color: black;
 }
 
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
     border-color: #555555;
+    color: black;
 }
