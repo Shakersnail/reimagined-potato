@@ -1,7 +1,7 @@
 let selected = 1;
 let money = {
         data: {
-            name: "money",
+            name: "Money",
             total: 0,
         },
         add: (amount) => {
@@ -10,7 +10,7 @@ let money = {
     },
     fish = {
         data: {
-            name: "fish",
+            name: "Fish",
             total: 0,
             price: 5,
             power: 1,
@@ -25,7 +25,7 @@ let money = {
     },
     container = {
         data: {
-            name: "container",
+            name: "Container",
             level: 1,
             capacity: 10,
             cost: 25,
