@@ -29,7 +29,7 @@ let money = {
             level: 1,
             capacity: 10,
             cost: 25,
-            costmultiplier: 1.75,
+            costmultiplier: 1.2,
         },
         upgrade: (amount) => {
             let cost = container.data.cost * Math.pow(container.data.costmultiplier, amount-1);
