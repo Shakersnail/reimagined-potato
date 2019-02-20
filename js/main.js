@@ -36,7 +36,6 @@ let money = {
             if(money.data.total >= cost){
                 money.data.total -= cost;
                 container.data.level += amount;
-                container.data.cost = cost * container.data.costmultiplier;
             }
             container.data.capacity = container.data.level * 10;
         }
@@ -123,10 +122,12 @@ function update() {
 }
 
 let interval = setInterval(() => {
-
+    // Limits fish to capacity
     if(fish.data.total >= container.data.capacity){
         fish.data.total = container.data.capacity;
     }
+    //Updates costs
+    container.data.cost = 25 * Math.pow(container.data.costmultiplier, container.data.level-1);
     // Updates the HTML
     document.getElementById('fish-counter').innerHTML = fish.data.total;
     document.getElementById('fish-max').innerHTML = container.data.capacity;
