@@ -6,6 +6,7 @@ body {
 
 .header {
     text-align: center;
+    background-image: url("../img.png");
 }
 
 .container {
