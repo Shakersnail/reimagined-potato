@@ -6,6 +6,8 @@ body{
 .container{
     background-color: aqua;
     width: 85%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content{
