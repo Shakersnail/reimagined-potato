@@ -79,3 +79,18 @@ body {
     border-color: #555555;
     color: black;
 }
+
+.grid-container {
+    display: grid;
+    grid: auto / auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: #ffffffcc;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
