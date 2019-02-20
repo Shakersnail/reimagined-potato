@@ -25,20 +25,20 @@ let money = {
     container = {
         data: {
             name: "container",
-            total: 0,
+            level: 1,
             capacity: 10,
             cost: 25,
             costmultiplier: 1.75,
         },
         upgrade: (amount) => {
-            var num = amount;
-            if(money.data.total >= container.data.cost * num){
-                for (let i = 0; i < num; i++) {
-                    container.data.capacity += num*10;
-                    money.data.total -= container.data.cost * num;
+            for (let i = 0; i < amount; i++) {
+                if(money.data.total >= container.data.cost){
+                    money.data.total -= container.data.cost;
+                    container.data.level ++;
                     container.data.cost = container.data.cost * container.data.costmultiplier;
                 }
             }
+            container.data.capacity = container.data.level * 10;
         }
     }
 
