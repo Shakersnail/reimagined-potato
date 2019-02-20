@@ -1,5 +1,5 @@
 body {
-    background-color: salmon;
+    background-color: #0000ffa9;
     margin: 0;
     color: #333333;
 }
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background-color: #00cfff;
+    background-color: #00d0ff9c;
     width: 85%;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
