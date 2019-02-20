@@ -31,13 +31,19 @@ let money = {
             costmultiplier: 1.75,
         },
         upgrade: (amount) => {
-            for (let i = 0; i < amount; i++) {
+            let cost = container.data.cost * Math.pow(container.data.costmultiplier, amount-1);
+            if(money.data.total >= cost){
+                money.data.total -= cost;
+                container.data.level += amount;
+                container.data.cost = cost * container.data.costmultiplier;
+            }
+            /* for (let i = 0; i < amount; i++) {
                 if(money.data.total >= container.data.cost){
                     money.data.total -= container.data.cost;
                     container.data.level ++;
                     container.data.cost = container.data.cost * container.data.costmultiplier;
                 }
-            }
+            } */
             container.data.capacity = container.data.level * 10;
         }
     }
