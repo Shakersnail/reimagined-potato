@@ -1,7 +1,7 @@
 body {
     background-color: darkslategray;
     margin: 0;
-    color: #333333;
+    color: #111111;
 }
 
 .header {
@@ -9,8 +9,9 @@ body {
     background-image: url("../img.png");
     background-blend-mode: luminosity;
     background-size: 100% 100%;
-    color: #000000;
-    text-shadow: 2px 2px #FFFFFF;
+    color: #111111;
+    font-size: 20px;
+    text-shadow: 1px 1px gray;
     height: 200px;
 }
 
@@ -46,7 +47,7 @@ body {
     margin-top: 5px;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
-    background-color: #1a6bc288;
+    background-color: #6494ed83;
 }
 
 .progress {
@@ -63,11 +64,13 @@ body {
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    background-color: #00cfff;
+    background-color: #00d0ffa9;
     border-color: #333333;
+    color: black;
 }
 
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
     border-color: #555555;
+    color: black;
 }
