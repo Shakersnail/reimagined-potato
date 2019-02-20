@@ -8,8 +8,13 @@ let money = {
     fish = {
         name: "fish",
         total: 0,
+        price: 5,
         add: (amount) => {
             fish.total += amount;
+        },
+        sell: () => {
+            money.total = fish.total * fish.price;
+            fish.total = 0;
         }
     },
     container = {
@@ -67,13 +72,12 @@ function resetG() {
 
 
 // afasfasaf
-document.getElementById("btn").addEventListener("click", Hello);
-
-function Hello() {
-    money.add(1);
-    console.log(money.total);
-}
-
+document.getElementById("fish-btn").onclick = function(){
+    fish.add(1);
+};
+document.getElementById("sell-btn").onclick = function(){
+    fish.sell();
+};
 
 // Sets the game speed
 let spd = 1000;
@@ -87,14 +91,14 @@ function speed(number) {
 let id = setInterval(update, spd);
 
 function update() {
-    if (energy.total < battery.capacity) {
-        energyAdd(ants.total);
-        energyAdd(bees.total);
-    }
+    
 }
 
 let interval = setInterval(() => {
 
+    if(fish.total >= container.capacity){
+        fish.total = container.capacity;
+    }
     // Updates the HTML
     document.getElementById('fish-counter').innerHTML = fish.total;
     document.getElementById('fish-max').innerHTML = container.capacity;
