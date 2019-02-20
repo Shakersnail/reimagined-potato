@@ -1,7 +1,9 @@
 body{
     background-color: salmon;
+    margin: 0;
 }
 
 .container{
     background-color: aqua;
+    width: 85%;
 }
