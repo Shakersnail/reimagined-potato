@@ -12,6 +12,7 @@ let money = {
             name: "fish",
             total: 0,
             price: 5,
+            power: 1,
         },
         add: (amount) => {
             fish.data.total += amount;
@@ -91,7 +92,7 @@ function resetG() {
 
 // afasfasaf
 document.getElementById("fish-btn").onclick = function(){
-    fish.add(1);
+    fish.add(fish.data.power);
 };
 document.getElementById("sell-btn").onclick = function(){
     fish.sell();
@@ -121,5 +122,6 @@ let interval = setInterval(() => {
     document.getElementById('fish-counter').innerHTML = fish.data.total;
     document.getElementById('fish-max').innerHTML = container.data.capacity;
     document.getElementById('money-counter').innerHTML = money.data.total;
+    document.getElementById('fish-power').innerHTML = fish.data.power;
 
 }, 1);
