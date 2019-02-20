@@ -1,2 +1,2 @@
 let btn = document.getElementById("btn");
-btn.onclick(() => console.log("Hello!"));
+btn.addEventListener("click", () => console.log("Hello!"));
