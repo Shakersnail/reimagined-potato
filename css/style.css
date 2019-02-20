@@ -91,3 +91,9 @@ body {
     padding: 20px 0;
     background-color: #6494ed63;
 }
+
+.selected-btns {
+    width: 70%;
+    display: inline-flex;
+    text-align: right;
+}
