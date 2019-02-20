@@ -1,16 +1,17 @@
-body{
+body {
     background-color: salmon;
     margin: 0;
 }
 
-.container{
+.container {
     background-color: aqua;
     width: 85%;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
-.content{
+.content {
     background-color: cornflowerblue;
 }
