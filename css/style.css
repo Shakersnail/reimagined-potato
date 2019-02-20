@@ -44,3 +44,12 @@ body {
     border-radius: 5px;
     height: 25px;
 }
+
+.nav-link {
+    background-color: #4495ed;
+    color: #333333;
+}
+
+a .nav-link .active {
+    background-color: #4495ed;
+}
