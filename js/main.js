@@ -27,9 +27,14 @@ let money = {
             name: "container",
             total: 0,
             capacity: 10,
+            cost: 25,
+            costmultiplier: 1.75,
         },
         upgrade: (amount) => {
-            container.data.capacity += amount;
+            if(money.data.total >= container.data.cost * amount){
+                container.data.capacity += amount;
+                money.data.total -= container.data.cost * amount;
+            }
         }
     }
 
