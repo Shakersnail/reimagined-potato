@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+.header {
+    text-align: center;
+}
+
 .container {
     background-color: #00cfff;
     width: 85%;
@@ -25,4 +29,9 @@ body {
 .counters li {
     width: 49%;
     display: inline-block;
+}
+
+.buttons {
+    margin: 0;
+    padding: 10px 5px 5px 5px;
 }
