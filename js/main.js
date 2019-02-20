@@ -133,6 +133,7 @@ let interval = setInterval(() => {
     document.getElementById('fish-max').innerHTML = container.data.capacity;
     document.getElementById('money-counter').innerHTML = numberformat.formatShort(money.data.total);
     document.getElementById('fish-power').innerHTML = fish.data.power;
+    document.getElementById('buy-nupp').innerHTML = selected;
 
     // Progressbar
     let current_progress = Math.round(fish.data.total / container.data.capacity * 100);
