@@ -1,3 +1,4 @@
+let selected = 1;
 let money = {
         data: {
             name: "money",
@@ -37,13 +38,6 @@ let money = {
                 container.data.level += amount;
                 container.data.cost = cost * container.data.costmultiplier;
             }
-            /* for (let i = 0; i < amount; i++) {
-                if(money.data.total >= container.data.cost){
-                    money.data.total -= container.data.cost;
-                    container.data.level ++;
-                    container.data.cost = container.data.cost * container.data.costmultiplier;
-                }
-            } */
             container.data.capacity = container.data.level * 10;
         }
     }
