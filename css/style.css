@@ -17,13 +17,13 @@ body {
 }
 
 .content {
-    background-color: cornflowerblue;
+    background-color: #6495ed;
 }
 
 .counters {
     list-style: none;
     margin: 0;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
 }
 
 .counters li {
@@ -32,6 +32,8 @@ body {
 }
 
 .buttons {
-    margin: 0;
-    padding: 10px 5px 5px 5px;
+    margin-top: 5px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    background-color: #4495ed;
 }
