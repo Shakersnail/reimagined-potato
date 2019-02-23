@@ -158,8 +158,12 @@ let interval = setInterval(() => {
     document.getElementById('fish-max').innerHTML = container.data.capacity;
     document.getElementById('money-counter').innerHTML = numberformat.formatShort(money.data.total);
     document.getElementById('fish-power').innerHTML = fish.data.power;
-    //document.getElementById('buy-selected').innerHTML = selected;
-    document.getElementsByClassName("buy-selected").innerHTML = selected;
+    document.getElementById('buy-selected1').innerHTML = selected;
+    document.getElementById('buy-selected2').innerHTML = selected;
+    document.getElementById('buy-selected3').innerHTML = selected;
+    document.getElementById('buy-selected4').innerHTML = selected;
+    document.getElementById('buy-selected5').innerHTML = selected;
+    document.getElementById('buy-selected6').innerHTML = selected;
     // Upgrade 1 HTML
     document.getElementById('u1-name').innerHTML = container.data.name;
     document.getElementById('u1-level').innerHTML = container.data.level;
