@@ -28,6 +28,7 @@ let money = {
             name: "Container",
             level: 1,
             capacity: 10,
+            icost: 25,
             cost: 25,
             costmultiplier: 1.2,
         },
@@ -38,6 +39,22 @@ let money = {
                 container.data.level += amount;
             }
             container.data.capacity = container.data.level * 10;
+        }
+    },
+    fisher = {
+        data: {
+            name: "Fisher",
+            level: 0,
+            icost: 100,
+            cost: 100,
+            costmultiplier: 1.2,
+        },
+        upgrade: (amount) => {
+            let cost = fisher.data.cost * Math.pow(fisher.data.costmultiplier, amount-1);
+            if(money.data.total >= cost){
+                money.data.total -= cost;
+                fisher.data.level += amount;
+            }
         }
     }
 
@@ -118,7 +135,9 @@ function speed(number) {
 let id = setInterval(update, spd);
 
 function update() {
-    
+    if(fish.data.total < container.data.capacity){
+        fish.add(fisher.data.level);
+    }
 }
 
 let interval = setInterval(() => {
@@ -127,17 +146,28 @@ let interval = setInterval(() => {
         fish.data.total = container.data.capacity;
     }
     //Updates costs
-    container.data.cost = 25 * Math.pow(container.data.costmultiplier, container.data.level-1);
+    container.data.cost = container.data.icost * Math.pow(container.data.costmultiplier, container.data.level-1);
+    if(fisher.data.level == 0) {
+        fisher.data.cost = fisher.data.icost / fisher.data.costmultiplier;
+    } else{
+
+        fisher.data.cost = fisher.data.icost * Math.pow(fisher.data.costmultiplier, fisher.data.level-1);
+    }
     // Updates the HTML
     document.getElementById('fish-counter').innerHTML = fish.data.total;
     document.getElementById('fish-max').innerHTML = container.data.capacity;
     document.getElementById('money-counter').innerHTML = numberformat.formatShort(money.data.total);
     document.getElementById('fish-power').innerHTML = fish.data.power;
-    document.getElementById('buy-selected').innerHTML = selected;
+    //document.getElementById('buy-selected').innerHTML = selected;
+    document.getElementsByClassName("buy-selected").innerHTML = selected;
+    // Upgrade 1 HTML
     document.getElementById('u1-name').innerHTML = container.data.name;
     document.getElementById('u1-level').innerHTML = container.data.level;
     document.getElementById('u1-price').innerHTML = numberformat.formatShort(container.data.cost * Math.pow(container.data.costmultiplier, selected-1));
-
+    // Upgrade 2 HTML
+    document.getElementById('u2-name').innerHTML = fisher.data.name;
+    document.getElementById('u2-level').innerHTML = fisher.data.level;
+    document.getElementById('u2-price').innerHTML = numberformat.formatShort(fisher.data.cost * Math.pow(fisher.data.costmultiplier, selected-1));
     // Progressbar
     let current_progress = Math.round(fish.data.total / container.data.capacity * 100);
     $("#dynamic")
